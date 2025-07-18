@@ -1,0 +1,18 @@
+.noexistance{
+    text-align: center;
+    background-color:gray;
+    color:black;
+}
+.noexistance h1{
+    color:black;
+    text-align:center;
+}
+
+.noexistance p{
+    text-align:center;
+    color:blue;
+}
+.noexistance h2{
+    text-align: center;
+    color:red;
+}

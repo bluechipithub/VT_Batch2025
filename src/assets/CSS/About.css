@@ -1,0 +1,62 @@
+.headerClass h2 {
+    text-align: center;
+    color: black;
+    /*    background-color: white;*/
+    /*    background-size: 30%;*/
+}
+
+.headerClass {
+    background-color: white;
+}
+
+.main {
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    text-align: center;
+}
+
+    .main box1 {
+        flex: 1;
+        /*        text-align: center;*/
+        text-decoration-color: black;
+        color: white;
+        height: 30px;
+        width: 30px;
+    }
+
+.box1 h4 {
+    text-align: left;
+    color: blue;
+}
+
+.box1 h1 {
+    text-align: left;
+    color: black;
+}
+
+.box1 p {
+    text-align: left;
+    color: black;
+    width: 500px;
+}
+
+.box1 h2 {
+    color: blue;
+}
+
+.main box2 {
+    text-align: center;
+    text-decoration-color: black;
+    color: white;
+    height: 40px;
+    width: 40px;
+}
+
+.box2 img {
+    height: 80%;
+    width: 70%;
+    box-sizing: content-box;
+    border-radius: 8px;
+    filter: drop-shadow(8px 8px 10px gray);
+}
