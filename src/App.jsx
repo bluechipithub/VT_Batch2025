@@ -1,31 +1,25 @@
+import { RouterProvider } from 'react-router-dom';
 
-import About from './About';
-import Contact from './Contact'
-import Navbar from './Navbar';
-import Home from './Home';
-import { Routes , Route } from 'react-router-dom';
-function App() {
+// routing
+import router from 'routes';
 
-return (
-<>
-{/* 
-  <About />
-  <Contact />
- */}
+// project imports
+import NavigationScroll from 'layout/NavigationScroll';
 
-    <Navbar />
-  
- <Routes>
-    <Route path='/'  element={< Home/>}/>
-    <Route path='/about'  element={< About/>}/>
-    <Route path='/contact'  element={< Contact/>}/>
+import ThemeCustomization from 'themes';
 
- </Routes>
+// auth provider
 
+// ==============================|| APP ||============================== //
 
-</>
-
-
-)
+export default function App() {
+  return (
+    <ThemeCustomization>
+      <NavigationScroll>
+        <>
+          <RouterProvider router={router} />
+        </>
+      </NavigationScroll>
+    </ThemeCustomization>
+  );
 }
-export default App
