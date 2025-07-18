@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/Contact.css'; // relative path
-// import  "../assets/images"
+
 
 
 const Contact = () => {
@@ -37,7 +37,7 @@ const Contact = () => {
                 </div>
 
                    <div className="c-image">
-                       <img src="../assets/images/5143151.jpg" alt="contact" />
+                       <img src='/images/5143151.jpg' alt="contact" />
                        
                   </div>
 
