@@ -2,7 +2,7 @@ import React from 'react'
 import "./About.css"
 const About = () => {
   return (
-  <div>
+  <>
   <h1 id='h1'>About us</h1>
 <div id='about'>
   <div id='left'>
@@ -30,7 +30,7 @@ const About = () => {
     <img src="https://www.makelots.com/wp-content/uploads/2023/03/about.jpg" alt="" />
   </div>
 </div>
-  </div>
+  </>
   )
 }
 

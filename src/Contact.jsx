@@ -6,7 +6,7 @@ import  './contect.css'
 
 const Contact = () => {
   return (
-    <div> 
+    <> 
     <div className="contact-header">
       <h1>Contact Us</h1>
     </div>
@@ -37,7 +37,7 @@ const Contact = () => {
       <img src="/5124556.jpg" alt="Contact Us Image" />
     </div>
  </div>
-  </div>
+  </>
   )
 }
 
