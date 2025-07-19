@@ -1,0 +1,39 @@
+.vibrant-wrapper {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  color: #222;
+  padding: 2rem;
+  width: 95%;
+  /* height: 100%; */
+}
+
+/* .vibrant-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.vibrant-hero {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.vibrant-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.vibrant-footer {
+  margin-top: 3rem;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+.main {
+  background-size: 70%;
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.header-bar{
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  background-color: white;
+
+}
+.main h2{
+  text-align: left;
+  font-style: normal;
+  color: blue;
+  font-size: 20px;
+ 
+}
+.main h3{
+  text-align: left;
+  font-style: normal;
+  color: black;
+  font-size: 50px;
+  margin-top: 0; 
+  line-height: 0.1;
+  margin-bottom: 0;
+}
+.main p{
+  font-style: normal;
+  text-align: left;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  color: black;
+  width: 560px;
+}
+
+.image1{
+  height:80%;
+  width:55%;
+  box-sizing: content-box;
+  border-radius: 8px;
+  filter: drop-shadow(8px 8px 10px gray);
+}
