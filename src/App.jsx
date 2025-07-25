@@ -1,27 +1,25 @@
-import About from "./Pages/About"
-import Home from "./Pages/Home"
-import Contact from "./Pages/Contact"
-import Navbar from "./Pages/Navbar"
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
-import PageNotFound from "./Pages/PageNotFound";
-function App() {
-    return (
+import { RouterProvider } from 'react-router-dom';
+
+// routing
+import router from 'routes';
+
+// project imports
+import NavigationScroll from 'layout/NavigationScroll';
+
+import ThemeCustomization from 'themes';
+
+// auth provider
+
+// ==============================|| APP ||============================== //
+
+export default function App() {
+  return (
+    <ThemeCustomization>
+      <NavigationScroll>
         <>
-            <BrowserRouter>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    {/* <Route path="*" element={<PageNotFound/>}/> */}
-                    <Route path="*" element={<Navigate to="/"/>}/>
-                    <Route path="*" element={<Home/>}/>
-
-
-                </Routes>
-                
-            </BrowserRouter>
+          <RouterProvider router={router} />
         </>
-    )
+      </NavigationScroll>
+    </ThemeCustomization>
+  );
 }
-export default App;
