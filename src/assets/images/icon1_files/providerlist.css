@@ -1,0 +1,224 @@
+.kamal{
+    margin: auto;
+    justify-content: space-around;
+}
+.serviceprocidercard {
+  width: 17rem;
+  height: 300px;
+  border: 1px solid #f20404ab;
+  border-radius: 8px;
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #7e337e 0%, #97d9e1 100%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  margin:1rem 1rem;
+
+}
+.serviceprocidercard .profileimg {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -22px;
+  left: -23px;
+  border: 4px solid #fff;
+  box-shadow: 5px 12px 20px 0px rgb(154 147 147);
+}
+.serviceprocidercard .profileimg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.serviceprocidercard .headerr {
+  width: 100%;
+  margin-top: 55px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+.serviceprocidercard .headerr p {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+}
+.serviceprocidercard .description {
+  width: 100%;
+  /* margin: 20px 0; */
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
+.serviceprocidercard .description span {
+  margin: 0px;
+  padding: 10px;
+}
+
+.serviceprocidercard .buttonss {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.serviceprocidercard .buttonss a {
+  width: 85px;
+  display: flex;
+  justify-content: space-around;
+  /*padding: 10px 0;*/
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.3s;
+  text-align: center;
+}
+.serviceprocidercard .buttonss a:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+.serviceprocidercard .buttonhire {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.serviceprocidercard .buttonhire a {
+  width: 183px;
+  height: 24px;
+  padding: 12px 0;
+  border: 1px solid #e74c3c;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 6px 4px #808080bf;
+  background: linear-gradient(128deg, #71e6ea, #0a2b2da8);
+}
+.serviceprocidercard .buttonhire a:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.serviceprocidercard .bottomline {
+  width: 100%;
+  padding: 10px 0;
+  /* background-color: #eee; */
+  border-top: 1px solid #ffffff;
+  text-align: center;
+  margin-top: auto;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+.serviceprocidercard .bottomline > div {
+  margin: 0;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.serviceprocidercard .bottomline > div span {
+  margin-right: 5px;
+}
+/* .serviceprocidercard .bottomline  {
+} */
+.gradient-text {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(71deg, #dd1b1b, #db4e4ec2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-heart {
+  color: red;
+  width: 25px;
+  /* border-right: 2px solid gray; */
+}
+@media (min-width: 0px) and (max-width: 353px) {
+.serviceprocidercard {
+width: 200px;
+height: 200px;
+}
+.serviceprocidercard .profileimg {
+    height: 60px;
+    width: 60px;
+   
+  }
+  .serviceprocidercard .headerr p{
+  
+    font-size: 8px;
+  }
+  .gradient-text {
+    font-size: 14px;
+   
+  }
+  .serviceprocidercard .description {
+
+    font-size: 6px;
+  }
+  .serviceprocidercard .buttonss a {
+    width: 50px;
+    margin: 7px;
+    padding: 5px 0;
+    font-size: 8px;
+  
+  }
+  .serviceprocidercard .buttonhire {
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+  }
+  .serviceprocidercard .buttonhire a {
+    width: 120px;
+    height: 6px;
+    padding: 8px 0;
+    font-size: 8px;
+    margin-top: 0px;
+  }
+  .serviceprocidercard .bottomline > div {
+    font-size: 6px;
+    
+  }
+  
+}
+  .images-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70px;
+  }
+ .image-container img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+.serviceprocidercard {
+    transition: transform 0.3s ease;
+}
+
+.serviceprocidercard:hover {
+    transform: translateY(-10px);
+}
+
+.image-container {
+    position: relative;
+}
+
+.verified-icon {
+    position: absolute;
+    bottom: 2px;
+    right: -10px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+
+
