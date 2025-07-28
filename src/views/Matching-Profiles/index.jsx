@@ -1,20 +1,42 @@
-// material-ui
 import Typography from '@mui/material/Typography';
-
-// project imports
+import Box from '@mui/material/Box';
 import MainCard from 'ui-component/cards/MainCard';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
-export default function Matchingprofile() {
+export default function SamplePage() {
   return (
-    <MainCard title="Matching Profiles">
-      <Typography variant="body2">
-        Lorem ipsum dolor sit amen, consenter nipissing eli, sed do elusion tempos incident ut laborers et doolie magna alissa. Ut enif ad
-        minim venice, quin nostrum exercitation illampu laborings nisi ut liquid ex ea commons construal. Duos aube grue dolor in
-        reprehended in voltage veil esse colum doolie eu fujian bulla parian. Exceptive sin ocean cuspidate non president, sunk in culpa qui
-        officiate descent molls anim id est labours.
-      </Typography>
+    <MainCard content={false}>
+      {/* Green banner at the top */}
+      <Box
+        sx={{
+          backgroundColor: 'green',
+          borderRadius: '6px',
+          minHeight: 30,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mb: 3
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          sx={{
+            color: '#fff',
+            fontWeight: 700,
+            textAlign: 'center',
+            fontSize:'18px',
+            fontFamily:'sans-serif',
+            py: 1
+          }}
+        >
+          Matching Profiles ( 0 records found )
+        </Typography>
+      </Box>
+      {/* Empty results area */}
+      <Box sx={{ minHeight: 42, background: 'transparent' }}>
+        {/* Add results mapping here if data present */}
+      </Box>
     </MainCard>
   );
 }

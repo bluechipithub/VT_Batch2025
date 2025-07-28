@@ -13,7 +13,10 @@ export default function Footer() {
         alignItems: 'center',
         justifyContent: 'center',
         pt: 3,
-        mt: 'auto'
+        mt: 'auto',
+        backgroundColor:'white',
+        padding:'12px',
+        width:'100%'
       }}
     >
       <Typography variant="caption">

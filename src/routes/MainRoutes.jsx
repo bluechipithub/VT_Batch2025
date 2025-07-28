@@ -14,25 +14,19 @@ import ADsResponse from "../views/ADs-Response";
 import AllPostedADs from "../views/All-Posted-ADs";
 
 
-
-
 // ==============================|| MAIN ROUTING ||============================== //
-
 const MainRoutes = {
   path: '/',
   element: <MainLayout />,
   children: [
     {
-      path: '',
+      path: '/customer/customer-dashboard',
       element: <DashboardDefault />
     },
     {
       path: 'customer',
       children: [
-        {
-          path: 'customer-dashboard',
-          element: <DashboardDefault />
-        },
+        
         {
           path: 'customer-post',
           element: <PostFreeADs />
@@ -47,26 +41,11 @@ const MainRoutes = {
         }
       ]
     },
-    // {
-    //   path: 'typography',
-    //   element: <UtilsTypography />
-    // },
-    // {
-    //   path: 'color',
-    //   element: <UtilsColor />
-    // },
-    // {
-    //   path: 'shadow',
-    //   element: <UtilsShadow />
-    // },
     {
       path: 'sample-page',
       element: <SamplePage />
     },
-    // {
-    //   path: 'your-ads-response',
-    //   element: <YourADsResponse />
-    // },
+    
     {
       path: 'all-service-provider',
       element: <AllServiceProvider />
