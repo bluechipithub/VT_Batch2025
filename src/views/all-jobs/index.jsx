@@ -1,225 +1,239 @@
-// // material-ui
-// import Typography from '@mui/material/Typography';
-
-// // project imports
-// import MainCard from 'ui-component/cards/MainCard';
-
-// // ==============================|| SAMPLE PAGE ||============================== //
-
-// export default function AllJobs() {
-//   return (
-//     <MainCard title="All Jobs">
-//       <Typography variant="body2">
-//         This is a sample page demonstrating the use of MainCard component.
-//       </Typography>
-//       <Typography variant="body2" color="textSecondary">
-//         You can customize this page as per your requirements.
-//       </Typography>
-//     </MainCard>
-//   );
-// }
 
 
-// import React, { useState } from 'react';
-// import {
-//   Box,
-//   Typography,
-//   Button,
-//   TextField
-// } from '@mui/material';
-// import { DataGrid } from '@mui/x-data-grid';
-// import { IconSend } from '@tabler/icons-react';
 
-// const rows = [
-//   { id: 21, serviceName: 'Maid', subCategory: '-', charges: 9000, duration: '30 Days', required: '15 Dec, 2024', submitted: '05 Dec, 2024' },
-//   { id: 86, serviceName: 'Beautician', subCategory: '-', charges: 9000, duration: '1 Days', required: '02 Jun, 2025', submitted: '20 May, 2025' },
-//   { id: 93, serviceName: 'Cook (Chef)', subCategory: '-', charges: 9000, duration: '30 Days', required: '02 Jun, 2025', submitted: '22 May, 2025' },
-//   { id: 99, serviceName: 'Maid', subCategory: '-', charges: 9000, duration: '30 Days', required: '05 Jun, 2025', submitted: '25 May, 2025' },
-//   { id: 123, serviceName: 'Maid', subCategory: '-', charges: 9000, duration: '30 Days', required: '10 Jul, 2025', submitted: '03 Jul, 2025' },
-//   { id: 9, serviceName: 'Maid', subCategory: '-', charges: 8000, duration: '30 Days', required: '01 Aug, 2024', submitted: '12 Jul, 2024' },
-//   { id: 20, serviceName: 'Maid', subCategory: '-', charges: 8000, duration: '30 Days', required: '01 Dec, 2024', submitted: '04 Dec, 2024' },
-//   { id: 31, serviceName: 'Accountant', subCategory: '-', charges: 8000, duration: '30 Days', required: '03 Feb, 2025', submitted: '12 Jan, 2025' },
-//   { id: 36, serviceName: 'Maid', subCategory: '-', charges: 8000, duration: '30 Days', required: '25 Mar, 2025', submitted: '01 Mar, 2025' },
-//   { id: 55, serviceName: 'Photographer', subCategory: 'Video Editor', charges: 8000, duration: '15 Days', required: '24 Jun, 2025', submitted: '05 May, 2025' }
-// ];
+import React, { useState, useMemo } from 'react';
+import { Box, Select, MenuItem, TextField, Typography } from '@mui/material';
+import { IconBrandTelegram } from '@tabler/icons-react'; // ✅ Corrected import
 
-// const columns = [
-//   { field: 'id', headerName: 'S.N', width: 80 },
-//   { field: 'serviceName', headerName: 'Service Name', flex: 1 },
-//   { field: 'subCategory', headerName: 'Sub Category Name', flex: 1 },
-//   { field: 'charges', headerName: 'Service Charges', flex: 1, renderCell: (params) => `₹ ${params.value}` },
-//   { field: 'duration', headerName: 'Duration Of Service', flex: 1 },
-//   { field: 'required', headerName: 'Required Date', flex: 1 },
-//   { field: 'submitted', headerName: 'Submitted Date', flex: 1 },
-//   {
-//     field: 'actions',
-//     headerName: 'Actions',
-//     sortable: false,
-//     width: 150,
-//     renderCell: () => (
-//       <Button
-//         variant="contained"
-//         color="error"
-//         size="small"
-//         startIcon={<IconSend size={16} />}
-//       >
-//         View & Apply
-//       </Button>
-//     )
-//   }
-// ];
-
-// export default function OpenServiceRequests() {
-//   const [pageSize, setPageSize] = useState(10);
-//   const [search, setSearch] = useState('');
-
-//   // Filter rows based on search
-//   const filteredRows = rows.filter((row) =>
-//     Object.values(row).some((val) =>
-//       val.toString().toLowerCase().includes(search.toLowerCase())
-//     )
-//   );
-
-//   return (
-//     <Box sx={{ p: 2 }}>
-//       <Box sx={{
-//         backgroundColor: '#00bcd4',
-//         p: 1,
-//         borderRadius: '4px',
-//         textAlign: 'center',
-//         mb: 2
-//       }}>
-//         <Typography variant="h6" sx={{ color: '#fff' }}>Open Service Requests</Typography>
-//       </Box>
-
-//       <Box sx={{ mb: 2, display: 'flex', justifyContent: 'flex-end' }}>
-//         <TextField
-//           variant="outlined"
-//           size="small"
-//           placeholder="Search..."
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//         />
-//       </Box>
-
-//       <div style={{ height: 500, width: '100%' }}>
-//         <DataGrid
-//           rows={filteredRows}
-//           columns={columns}
-//           pageSize={pageSize}
-//           rowsPerPageOptions={[5, 10, 20]}
-//           onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-//           disableSelectionOnClick
-//         />
-//       </div>
-//     </Box>
-//   );
-// }
-import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  TextField,
-  Button,
-} from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { IconSend } from "@tabler/icons-react";
-
-const rows = [
-  { id: 21, serviceName: "Maid", subCategory: "-", charges: "₹ 9000", duration: "30 Days", required: "15 Dec, 2024", submitted: "05 Dec, 2024" },
-  { id: 86, serviceName: "Beautician", subCategory: "-", charges: "₹ 9000", duration: "1 Days", required: "02 Jun, 2025", submitted: "20 May, 2025" },
-  { id: 93, serviceName: "Cook (Chef)", subCategory: "-", charges: "₹ 9000", duration: "30 Days", required: "02 Jun, 2025", submitted: "22 May, 2025" },
-  { id: 99, serviceName: "Maid", subCategory: "-", charges: "₹ 9000", duration: "30 Days", required: "05 Jun, 2025", submitted: "25 May, 2025" },
-  { id: 123, serviceName: "Maid", subCategory: "-", charges: "₹ 9000", duration: "30 Days", required: "10 Jul, 2025", submitted: "03 Jul, 2025" },
-  { id: 9, serviceName: "Maid", subCategory: "-", charges: "₹ 8000", duration: "30 Days", required: "01 Aug, 2024", submitted: "12 Jul, 2024" },
-  { id: 20, serviceName: "Maid", subCategory: "-", charges: "₹ 8000", duration: "30 Days", required: "01 Dec, 2024", submitted: "04 Dec, 2024" },
-  { id: 31, serviceName: "Accountant", subCategory: "-", charges: "₹ 8000", duration: "30 Days", required: "03 Feb, 2025", submitted: "12 Jan, 2025" },
-  { id: 36, serviceName: "Maid", subCategory: "-", charges: "₹ 8000", duration: "30 Days", required: "25 Mar, 2025", submitted: "01 Mar, 2025" },
-  { id: 55, serviceName: "Photographer", subCategory: "Video Editor", charges: "₹ 8000", duration: "15 Days", required: "24 Jun, 2025", submitted: "05 May, 2025" },
+const initialData = [
+  { sn: 1, serviceName: 'Maid', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '15 Dec, 2024', submittedDate: '10 Nov, 2024' },
+  { sn: 2, serviceName: 'Beautician', subCategory: '-', serviceCharges: 9000, duration: '1 Day', requiredDate: '02 Jun, 2025', submittedDate: '20 May, 2025' },
+  { sn: 3, serviceName: 'Cook (Chef)', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '02 Jun, 2025', submittedDate: '22 May, 2025' },
+  { sn: 4, serviceName: 'Beautician', subCategory: '-', serviceCharges: 9000, duration: '1 Day', requiredDate: '02 Jun, 2025', submittedDate: '20 May, 2025' },
+  { sn: 5, serviceName: 'Cook (Chef)', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '02 Jun, 2025', submittedDate: '22 May, 2025' },
+  { sn: 6, serviceName: 'Beautician(F)', subCategory: '-', serviceCharges: 9000, duration: '1 Day', requiredDate: '02 Jun, 2025', submittedDate: '20 May, 2025' },
+  { sn: 7, serviceName: 'Cook (Chef)', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '02 Jun, 2025', submittedDate: '22 May, 2025' },
+  { sn: 8, serviceName: 'Beautician(M)', subCategory: '-', serviceCharges: 9000, duration: '1 Day', requiredDate: '02 Jun, 2025', submittedDate: '20 May, 2025' },
+  { sn: 9, serviceName: 'Cook', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '02 Jun, 2025', submittedDate: '22 May, 2025' },
+  { sn: 10, serviceName: 'Cook', subCategory: '-', serviceCharges: 9000, duration: '30 Days', requiredDate: '02 Jun, 2025', submittedDate: '22 May, 2025' }
 ];
 
-const columns = [
-  { field: "id", headerName: "S.N", width: 80 },
-  { field: "serviceName", headerName: "Service Name", width: 150 },
-  { field: "subCategory", headerName: "Sub Category Name", width: 150 },
-  { field: "charges", headerName: "Service Charges", width: 150 },
-  { field: "duration", headerName: "Duration Of Service", width: 160 },
-  { field: "required", headerName: "Required Date", width: 150 },
-  { field: "submitted", headerName: "Submitted Date", width: 150 },
-  {
-    field: "actions",
-    headerName: "Actions",
-    width: 150,
-    sortable: false,
-    renderCell: () => (
-      <Button
-        variant="contained"
-        color="error"
-        startIcon={<IconSend size={16} />}
-        sx={{ textTransform: "none" }}
-      >
-        View & Apply
-      </Button>
-    ),
-  },
+const headers = [
+  { key: 'sn', label: 'S.N' },
+  { key: 'serviceName', label: 'Service Name' },
+  { key: 'subCategory', label: 'Sub Category' },
+  { key: 'serviceCharges', label: 'Charges' },
+  { key: 'duration', label: 'Duration' },
+  { key: 'requiredDate', label: 'Required Date' },
+  { key: 'submittedDate', label: 'Submitted Date' },
+  { key: 'actions', label: 'Actions' }
 ];
 
-export default function OpenServiceRequests() {
-  const [search, setSearch] = useState("");
+const ServiceListPage = () => {
+  const [data] = useState(initialData);
+  const [search, setSearch] = useState('');
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
 
-  const filteredRows = rows.filter((row) =>
-    row.serviceName.toLowerCase().includes(search.toLowerCase())
+  const filteredData = data.filter(item =>
+    item.serviceName.toLowerCase().includes(search.toLowerCase())
   );
 
+  const sortedData = useMemo(() => {
+    if (!sortConfig.key) return filteredData;
+    return [...filteredData].sort((a, b) => {
+      const aVal = a[sortConfig.key];
+      const bVal = b[sortConfig.key];
+      if (typeof aVal === 'number') {
+        return sortConfig.direction === 'asc' ? aVal - bVal : bVal - aVal;
+      }
+      return sortConfig.direction === 'asc'
+        ? String(aVal).localeCompare(String(bVal))
+        : String(bVal).localeCompare(String(aVal));
+    });
+  }, [filteredData, sortConfig]);
+
+  const totalEntries = sortedData.length;
+  const totalPages = Math.ceil(totalEntries / rowsPerPage);
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const pageData = sortedData.slice(startIndex, startIndex + rowsPerPage);
+
+  const paginationRange = useMemo(() => {
+    const delta = 2;
+    const range = [];
+    let l;
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
+        if (l) {
+          if (i - l === 2) range.push(l + 1);
+          else if (i - l !== 1) range.push('...');
+        }
+        range.push(i);
+        l = i;
+      }
+    }
+    return range;
+  }, [currentPage, totalPages]);
+
+  const toggleSort = (key) => {
+    setSortConfig(prev =>
+      prev.key === key
+        ? { key, direction: prev.direction === 'asc' ? 'desc' : 'asc' }
+        : { key, direction: 'asc' }
+    );
+  };
+
   return (
-    <Box sx={{ p: 3, backgroundColor: "#f5f6fa", minHeight: "100vh" }}>
-      <Box
-        sx={{
-          backgroundColor: "#ffffff",
-          p: 2,
-          borderRadius: 2,
-          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
-        }}
-      >
-        {/* Header */}
-        <Typography
-          variant="h6"
-          sx={{
-            backgroundColor: "#03A9F4",
-            color: "#fff",
-            borderRadius: "4px",
-            textAlign: "center",
-            p: 1,
-            fontWeight: "bold",
-          }}
-        >
-          Open Service Requests
+    <Box sx={{ padding: 3, fontFamily: 'sans-serif', backgroundColor: '#f9f9f9' }}>
+      <Box sx={{ background: 'rgb(23, 129, 253)', padding: 1, borderRadius: 1, mb: 2 }}>
+        <Typography variant="h2" align="center" sx={{ color: 'white', fontWeight: 600 }}>
+          All Jobs
         </Typography>
+      </Box>
 
-        {/* Search */}
-        <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 1, mt: 1 }}>
-          <TextField
-            variant="outlined"
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Typography variant="body2" sx={{ mr: 1 }}>Show</Typography>
+          <Select
             size="small"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </Box>
-
-        {/* DataGrid */}
-        <Box sx={{ height: 450, width: "100%" }}>
-          <DataGrid
-            rows={filteredRows}
-            columns={columns}
-            pageSizeOptions={[5, 10]}
-            initialState={{
-              pagination: { paginationModel: { pageSize: 10 } },
+            value={rowsPerPage}
+            onChange={(e) => {
+              setRowsPerPage(Number(e.target.value));
+              setCurrentPage(1);
             }}
-            disableRowSelectionOnClick
-          />
+            sx={{ width: 80 }}
+          >
+            {[5, 10, 15].map(opt => (
+              <MenuItem key={opt} value={opt}>{opt}</MenuItem>
+            ))}
+          </Select>
+          <Typography variant="body2" sx={{ ml: 1 }}>entries</Typography>
+        </Box>
+        <TextField
+          size="small"
+          placeholder="Search"
+          sx={{ width: 250 }}
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setCurrentPage(1);
+          }}
+        />
+      </Box>
+
+      <Box sx={{ background: '#fff', borderRadius: 2, boxShadow: 1, overflow: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead style={{ backgroundColor: '#cde4e1' }}>
+            <tr>
+              {headers.map(({ key, label }) => (
+                <th
+                  key={key}
+                  onClick={() => key !== 'actions' && toggleSort(key)}
+                  style={{
+                    padding: '12px',
+                    textAlign: 'left',
+                    fontWeight: 600,
+                    cursor: key !== 'actions' ? 'pointer' : 'default',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  {label}
+                  {key !== 'actions' && sortConfig.key === key && (
+                    <span style={{ marginLeft: 6 }}>{sortConfig.direction === 'asc' ? '🔼' : '🔽'}</span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {pageData.length === 0 ? (
+              <tr>
+                <td colSpan={headers.length} style={{ textAlign: 'center', padding: '20px' }}>
+                  No entries found
+                </td>
+              </tr>
+            ) : (
+              pageData.map(item => (
+                <tr key={item.sn} style={{ borderBottom: '1px solid #eee',lineHeight: '3' }}>
+                  <td>{item.sn}</td>
+                  <td>{item.serviceName}</td>
+                  <td>{item.subCategory}</td>
+                  <td>₹ {item.serviceCharges}</td>
+                  <td>{item.duration}</td>
+                  <td>{item.requiredDate}</td>
+                  <td>{item.submittedDate}</td>
+                  <td>
+                    {/* <button style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 4,
+                      backgroundColor: '#dc3545',
+                      color: 'white',
+                      border: 'none',
+                      padding: '6px 10px',
+                      borderRadius: 4,
+                      cursor: 'pointer'
+                    }}>
+                      <IconBrandTelegram size={16} /> View & Apply
+                    </button> */}
+                    <button
+  onClick={() => window.open('#')}
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#dc3545',
+    color: 'white',
+    border: 'none',
+    padding: '6px 10px',
+    borderRadius: 4,
+    cursor: 'pointer',
+  }}
+>
+  <IconBrandTelegram size={16} /> View & Apply
+</button>
+
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
+          <Typography variant="body2">
+            {totalEntries === 0
+              ? 'Showing 0 to 0 of 0 entries'
+              : `Showing ${startIndex + 1} to ${Math.min(startIndex + rowsPerPage, totalEntries)} of ${totalEntries} entries`}
+          </Typography>
+          <Box>
+            <button onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} disabled={currentPage === 1}>Prev</button>
+            {paginationRange.map((page, idx) =>
+              page === '...' ? (
+                <span key={idx} style={{ margin: '0 4px' }}>...</span>
+              ) : (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentPage(page)}
+                  style={{
+                    margin: '0 4px',
+                    fontWeight: page === currentPage ? 'bold' : 'normal',
+                    border: 'none',
+                    background: 'transparent',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {page}
+                </button>
+              )
+            )}
+            <button onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages}>Next</button>
+          </Box>
         </Box>
       </Box>
     </Box>
   );
-}
+};
+
+export default ServiceListPage;

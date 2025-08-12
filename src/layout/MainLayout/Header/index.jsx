@@ -1,32 +1,41 @@
+
 // material-ui
+import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-// import {IconDownload } from '@tabler/icons-react';
-// project imports
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import IconButton from '@mui/material/IconButton';
+
+// routing
+import { Link } from 'react-router-dom';
+
+// project components
 import LogoSection from '../LogoSection';
-// import SearchSection from './SearchSection';
 import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
-
 import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
 
-// assets
-import { IconMenu2 } from '@tabler/icons-react';
-// const icons = { IconDownload };
-// ==============================|| MAIN NAVBAR / HEADER ||============================== //
+// icons
+import { IconMenu2, IconPhotoDown, IconDownload } from '@tabler/icons-react';
 
 export default function Header() {
   const theme = useTheme();
   const downMD = useMediaQuery(theme.breakpoints.down('md'));
-
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
   return (
     <>
-      {/* logo & toggler button  */}
+      {/* Logo + Drawer */}
       <Box sx={{ width: downMD ? 'auto' : 228, display: 'flex' }}>
         <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
           <LogoSection />
@@ -52,23 +61,40 @@ export default function Header() {
         </Avatar>
       </Box>
 
-      {/* header search */} 
-      {/* <SearchSection />
+      {/* Notification */}
+      <NotificationSection />
+
+      {/* Greeting */}
       <Box sx={{ flexGrow: 1 }} />
-      <Box sx={{ flexGrow: 1 }} />  */}
+      <h2 style={{ color: 'grey', marginLeft: '10px' }}>Hello Service Provider!</h2>
 
-      {/* notification */}
-       <NotificationSection /> 
+      {/* Download Dropdown */}
+      <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
+        <IconButton
+          onClick={handleClick}
+          sx={{
+            ...theme.typography.commonAvatar,
+            ...theme.typography.mediumAvatar,
+            bgcolor: 'primary.light',
+            color: 'primary.dark',
+            '&:hover': {
+              bgcolor: 'primary.dark',
+              color: 'primary.light'
+            }
+          }}
+        >
+          <IconDownload stroke={1.5} size="20px" />
+        </IconButton>
+        <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+          <MenuItem component={Link} to="/provider/id-card" onClick={handleClose}>
+            <IconPhotoDown size={18} style={{ marginRight: 8, color: 'red' }} />
+            View ID
+          </MenuItem>
+        </Menu>
+      </Box>
 
-        <Box sx={{ flexGrow: 1 }} />
-        
-        <h2 style={{ color: 'grey', marginLeft: '10px' }}>Hello Service Provider!</h2>
-
-
-      {/* profile */}
-       <ProfileSection /> 
-        
-     
+      {/* Profile Section */}
+      <ProfileSection />
     </>
   );
 }
