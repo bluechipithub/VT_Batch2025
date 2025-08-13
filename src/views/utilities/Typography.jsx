@@ -11,41 +11,41 @@ import { gridSpacing } from 'store/constant';
 
 // ==============================|| TYPOGRAPHY ||============================== //
 
-export default function Typography() {
+export default function muiTypography () {
   return (
-    <MainCard title="Basic Typography" secondary={<SecondaryAction link="https://next.material-ui.com/system/typography/" />}>
+    <MainCard title="Typography" secondary={<SecondaryAction link="https://next.material-ui.com/system/typography/" />}>
       <Grid container spacing={gridSpacing}>
         <Grid size={{ xs: 12, sm: 6 }}>
-          <SubCard title="Heading">
+          <SubCard title="ALL Serivice Providers">
             <Grid container direction="column" spacing={1}>
               <Grid>
                 <MuiTypography variant="h1" gutterBottom>
-                  h1. Heading
+                  h1. shivam
                 </MuiTypography>
               </Grid>
               <Grid>
                 <MuiTypography variant="h2" gutterBottom>
-                  h2. Heading
+                  h2. shivam
                 </MuiTypography>
               </Grid>
               <Grid>
                 <MuiTypography variant="h3" gutterBottom>
-                  h3. Heading
+                  h3. shivam
                 </MuiTypography>
               </Grid>
               <Grid>
                 <MuiTypography variant="h4" gutterBottom>
-                  h4. Heading
+                  h4. shivam
                 </MuiTypography>
               </Grid>
               <Grid>
                 <MuiTypography variant="h5" gutterBottom>
-                  h5. Heading
+                  h5. shivam
                 </MuiTypography>
               </Grid>
               <Grid>
                 <MuiTypography variant="h6" gutterBottom>
-                  h6. Heading
+                  h6. shivam
                 </MuiTypography>
               </Grid>
             </Grid>

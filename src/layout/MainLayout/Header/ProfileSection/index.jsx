@@ -29,7 +29,7 @@ import Transitions from 'ui-component/extended/Transitions';
 import useConfig from 'hooks/useConfig';
 
 // assets
-import User1 from 'assets/images/users/user-round.svg';
+import User1 from 'assets/images/users/Ram2.jpg';
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons-react';
 
 // ==============================|| PROFILE MENU ||============================== //
@@ -96,7 +96,7 @@ export default function ProfileSection() {
             color="inherit"
           />
         }
-        label={<IconSettings stroke={1.5} size="24px" />}
+        // label={<IconSettings stroke={1.5} size="24px" />}
         ref={anchorRef}
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
@@ -126,17 +126,32 @@ export default function ProfileSection() {
               <Paper>
                 {open && (
                   <MainCard border={false} elevation={16} content={false} boxShadow shadow={theme.shadows[16]}>
+
                     <Box sx={{ p: 2, pb: 0 }}>
-                      <Stack>
-                        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
-                          <Typography variant="h4">Good Morning,</Typography>
-                          <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
-                            Johne Doe
-                          </Typography>
-                        </Stack>
-                        <Typography variant="subtitle2">Project Admin</Typography>
-                      </Stack>
-                      <OutlinedInput
+    <Stack direction="row" spacing={2} alignItems="center">
+      {/* Image on the left */}
+      <img
+        src={User1}
+        alt="Profile Cover"
+        style={{
+          width: '35px',
+          height: '60px',
+          objectFit: 'cover',
+          borderRadius: '8px'
+        }}
+      />
+
+      {/* Text content on the right */}
+      <Stack spacing={0.5}>
+        <Typography variant="h4">shivam Kumar</Typography>
+        <Typography variant="subtitle2">Admin (523)</Typography>
+        <Typography variant="subtitle2">Admin7898084585@gmail.com</Typography>
+      </Stack>
+    </Stack>
+  </Box>
+
+
+                      {/* <OutlinedInput
                         sx={{ width: '100%', pr: 1, pl: 2, my: 2 }}
                         id="input-search-profile"
                         value={value}
@@ -149,9 +164,9 @@ export default function ProfileSection() {
                         }
                         aria-describedby="search-helper-text"
                         slotProps={{ input: { 'aria-label': 'weight' } }}
-                      />
-                      <Divider />
-                    </Box>
+                      /> */}
+                      {/* <Divider /> */}
+                   
                     <Box
                       sx={{
                         p: 2,
@@ -162,7 +177,7 @@ export default function ProfileSection() {
                         '&::-webkit-scrollbar': { width: 5 }
                       }}
                     >
-                      <UpgradePlanCard />
+                      {/* <UpgradePlanCard />
                       <Divider />
                       <Card sx={{ bgcolor: 'primary.light', my: 2 }}>
                         <CardContent>
@@ -200,8 +215,8 @@ export default function ProfileSection() {
                             </Grid>
                           </Grid>
                         </CardContent>
-                      </Card>
-                      <Divider />
+                      </Card> */}
+                      {/* <Divider /> */}
                       <List
                         component="nav"
                         sx={{
@@ -216,7 +231,7 @@ export default function ProfileSection() {
                           <ListItemIcon>
                             <IconSettings stroke={1.5} size="20px" />
                           </ListItemIcon>
-                          <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
+                          <ListItemText primary={<Typography variant="body2"> Settings</Typography>} />
                         </ListItemButton>
                         <ListItemButton sx={{ borderRadius: `${borderRadius}px` }} selected={selectedIndex === 1}>
                           <ListItemIcon>
@@ -226,9 +241,9 @@ export default function ProfileSection() {
                             primary={
                               <Grid container spacing={1} sx={{ justifyContent: 'space-between' }}>
                                 <Grid>
-                                  <Typography variant="body2">Social Profile</Typography>
+                                  <Typography variant="body2">MY Profile</Typography>
                                 </Grid>
-                                <Grid>
+                                {/* <Grid>
                                   <Chip
                                     label="02"
                                     variant="filled"
@@ -236,7 +251,7 @@ export default function ProfileSection() {
                                     color="warning"
                                     sx={{ '& .MuiChip-label': { mt: 0.25 } }}
                                   />
-                                </Grid>
+                                </Grid> */}
                               </Grid>
                             }
                           />

@@ -1,0 +1,97 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #f1f3f5; */
+}
+
+/* Header Section */
+.dashboard-header {
+  background-color: #2f3e46;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 4px solid #f4c20d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid Layout */
+.dashboard-wrapper {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 24px;
+  padding: 30px;
+}
+
+/* Each Card */
+.card-block {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card-block:hover {
+  transform: translateY(-6px);
+}
+
+/* Title Inside Each Card */
+.card-title {
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* Colored Section */
+.dashboard-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+  height: 100%;
+}
+.dashboard-card a{
+  text-decoration: none;
+}
+
+/* Card Items */
+.card-item {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+
+/* Button Style */
+.card-item.button {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.card-item.button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+/* Text Style */
+.card-item.text {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #212529;
+  font-weight: 600;
+  border-left: 4px solid #495057;
+  cursor: default;
+}

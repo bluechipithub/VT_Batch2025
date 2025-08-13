@@ -12,7 +12,7 @@ import NotificationSection from './NotificationSection';
 
 import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
 
-// assets
+
 import { IconMenu2 } from '@tabler/icons-react';
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
@@ -57,10 +57,10 @@ export default function Header() {
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
 
-      {/* notification */}
-      <NotificationSection />
-
-      {/* profile */}
+     {/* /*notification */ 
+      /* <NotificationSection /> */}
+      
+       HELLOW ADMIN
       <ProfileSection />
     </>
   );

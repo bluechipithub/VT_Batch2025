@@ -11,18 +11,18 @@ export default function Footer() {
       direction="row"
       sx={{
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         pt: 3,
         mt: 'auto'
       }}
     >
       <Typography variant="caption">
-        &copy; All rights reserved{' '}
-        <Typography component={Link} href="https://codedthemes.com/about-us/" underline="hover" target="_blank" color="secondary.main">
+        All Rights Reserved by <span style={{color:"red"}}> BlueChipCares</span> admin.{' '}
+        {/* <Typography component={Link} href="https://codedthemes.com/about-us/" underline="hover" target="_blank" color="secondary.main">
           CodedThemes
-        </Typography>
+        </Typography> */}
       </Typography>
-      <Stack direction="row" sx={{ gap: 1.5, alignItems: 'center', justifyContent: 'space-between' }}>
+      {/* <Stack direction="row" sx={{ gap: 1.5, alignItems: 'center', justifyContent: 'space-between' }}>
         <Link
           component={RouterLink}
           to="https://x.com/codedthemes"
@@ -43,7 +43,7 @@ export default function Footer() {
         >
           Discord
         </Link>
-      </Stack>
+      </Stack> */}
     </Stack>
   );
 }

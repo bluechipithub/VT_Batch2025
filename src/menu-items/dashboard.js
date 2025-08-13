@@ -1,24 +1,33 @@
 // assets
-import { IconDashboard } from '@tabler/icons-react';
+import { IconDashboard,IconUserExclamation,IconUserPause } from '@tabler/icons-react';
 
 // constant
-const icons = { IconDashboard };
+const icons = {IconUserExclamation,IconUserPause };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
 const dashboard = {
-  id: 'dashboard',
-  title: 'Dashboard',
+  id: '',
+  title: '',
   type: 'group',
   children: [
     {
-      id: 'default',
-      title: 'Dashboard',
+      id: 'DASHBOARD-1',
+      title: 'DASHBOARD-1',
       type: 'item',
-      url: '/dashboard/default',
-      icon: icons.IconDashboard,
+      url: 'Admin/dashboard1',
+      icon: icons.IconUserExclamation,
       breadcrumbs: false
-    }
+    },
+     {
+      id: 'DASHBOARD-2',
+      title: 'DASHBOARD-2',
+      type: 'item',
+      url: 'Admin/dashboard2/',
+      icon: icons.IconUserPause,
+      breadcrumbs: false
+    },
+    
   ]
 };
 

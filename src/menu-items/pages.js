@@ -1,42 +1,46 @@
 // assets
-import { IconKey } from '@tabler/icons-react';
+import { IconKey,IconPercentage33  } from '@tabler/icons-react';
 
 // constant
 const icons = {
-  IconKey
+   IconPercentage33
 };
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
 
+
+
 const pages = {
-  id: 'pages',
-  title: 'Pages',
-  caption: 'Pages Caption',
-  icon: icons.IconKey,
+  id: '',
+  title: '',
+
+  icon: icons.IconPercentage33,
   type: 'group',
   children: [
-    {
-      id: 'authentication',
-      title: 'Authentication',
-      type: 'collapse',
-      icon: icons.IconKey,
-      children: [
-        {
-          id: 'login',
-          title: 'login',
-          type: 'item',
-          url: '/pages/login',
-          target: true
-        },
-        {
-          id: 'register',
-          title: 'register',
-          type: 'item',
-          url: '/pages/register',
-          target: true
-        }
-      ]
-    }
+    
+        // {
+        //   id: 'Post free ADs (Service Requirement here)',
+        //   title: 'Post free ADs (Service Requirement here',
+        //   type: 'item',
+        //   url: '/Customer/Customer-post',
+        //   target: true
+        // },
+        // {
+        //   id: 'ADs Response',
+        //   title: 'ADs Response',
+        //   type: 'item',
+        //   url: '/Customer/application',
+        //   target: true
+        // },
+        // {
+        //   id: ' ALL Posted ADs',
+        //   title: 'ALL Posted ADs',
+        //   type: 'item',
+        //   url: '/Customer/ALL',
+        //   target: true
+        // }
+      // ]
+    // }
   ]
 };
 
