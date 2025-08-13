@@ -1,0 +1,207 @@
+
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing:border-box;
+ 
+}
+html,body{
+     height:100%;
+     width: 100%;
+}
+.container{
+    /* width: 100vw; */
+    /* height: 90vh; */
+    /* background-color:#ddd; */
+    font-family:"gilroy",sans-serif;
+    
+}
+
+.card-top{
+    width: 100%;
+    /* height: 50%; */
+    /* background-color: crimson; */
+    padding: 1rem;
+    display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+   grid-template-rows: repeat(auto-fill, minmax(15rem, 1fr));
+
+    gap: 1rem;
+}
+
+.card{
+    /* width: 17rem; */
+    height: 100%;
+    /* background-color: springgreen; */
+    /* padding: 1rem; */
+    display: flex;
+    flex-direction: column;
+    /* gap:.5rem; */
+    /* box-shadow:0 0 10px rgb( 0, 0, 0, 0.2); */
+    border-radius: .2rem;
+    position: relative;
+    transition: all ease 0.3s;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.card:hover{
+    box-shadow:0 0 20px rgb( 0, 0, 0, 0.5);
+    transform: scale(1.04);
+
+}
+
+.card h2{
+    text-align: center;
+    font-weight: 300;
+    background-color:#000000 ;
+    color: #fff;
+    padding: .7rem;
+
+}
+.btn{
+
+    background-color:#f6c000;
+    width: 100%;
+    height: 100%;
+    padding: .6rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: space-between;
+    /* border-radius: .2rem; */
+    
+
+}
+
+.btn button{
+    padding: .5rem .6rem;
+    background-color: #00aeff;
+    border: none;
+    color: #111;
+    font-size: 1rem;
+    border-radius: .6rem;
+     width: 80%;
+    transition: all ease .4s;
+    /* box-shadow: 0 0 10px rgb( 0, 0, 0, 0.2); */
+} 
+.btn button:hover{
+    cursor: pointer;
+    transform:  scale(1.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+   
+}
+.btn button:active{
+    transform:  scale(0.9);
+
+}
+.btn button a {
+
+    text-decoration: none;
+    color: black;
+}
+
+.card p, h3{
+    cursor: pointer;
+    transition:  all ease 0.4s;
+    position: relative;
+   
+    padding: .2rem .3rem;
+}
+
+.card h3::after{
+    content: " ";
+    width: 0%;
+    height: 1px;
+    position: absolute;
+   background-color: black;
+   left: 0;
+   bottom: 10%;
+
+
+
+}
+.card h3:hover::after{
+    animation:anime 1s ease-in-out;
+
+}
+@keyframes anime {
+
+    0%{
+        width: 0%;
+        left: 0;
+    }
+     50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0%;
+        left: 100%;
+    }
+    
+}
+.card p:hover{
+   transform: scale(1.1);
+   color: black;
+}
+
+.card h3:hover{
+   transform: scale(1.1);
+   color: black;
+}
+
+#card1 .btn{
+    background-color: #f47926;
+}
+
+
+#card2 .btn{
+    background-color: #a3cc8f;
+}
+
+
+#card3 .btn{
+    background-color: #f6ad8f;
+    color: #6e1f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+  
+} 
+
+#btm-c1 .btn{
+    display: flex;
+    align-items: center;
+    background-color:#f6ad8f;
+    line-height: 2rem;
+}
+#btm-c2 .btn{
+    display: flex;
+    align-items: center;
+    background-color:#a3cc8f;
+    line-height: 2rem;
+}
+#btm-c3 .btn{
+    display: flex;
+    align-items: center;
+    background-color:#f47926;
+    line-height: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+#btm-c1 .btn{
+    display: flex;
+    align-items: center;
+    background-color:#f6ad8f;
+    
+}
+
+#btm-c4 .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

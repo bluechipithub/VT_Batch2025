@@ -1,28 +1,25 @@
-import { useState } from 'react'
-import   About from './components/About'
-import Contact from './components/Contact'
-import { Routes, Route } from 'react-router-dom';
-import Mainroutes from './routes/Mainroutes';
-import Nav from './components/Nav';
+import { RouterProvider } from 'react-router-dom';
 
-function App() {
- 
-  return ( 
+// routing
+import router from 'routes';
 
-    <>
+// project imports
+import NavigationScroll from 'layout/NavigationScroll';
 
-          {/* < About /> 
-        
-           <Contact /> */}
+import ThemeCustomization from 'themes';
 
-       <Nav />
-     <Mainroutes />
+// auth provider
 
-    </>
-    
+// ==============================|| APP ||============================== //
 
-  
-  )
+export default function App() {
+  return (
+    <ThemeCustomization>
+      <NavigationScroll>
+        <>
+          <RouterProvider router={router} />
+        </>
+      </NavigationScroll>
+    </ThemeCustomization>
+  );
 }
-
-export default App

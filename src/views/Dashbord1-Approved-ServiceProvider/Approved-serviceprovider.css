@@ -1,0 +1,157 @@
+
+*{
+    margin:0%;
+    padding:0%;
+ box-sizing:border-box;
+ font-family:"gilroy",sans-serif;
+}
+
+html,body{
+     height:100%;
+     width: 100%;
+}
+
+.approved{
+    width:  100%;
+    background-color: #fff;
+}
+
+.approved h2{
+
+    background-color: rgb(19, 97, 207);
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    border-radius: .5rem;
+}
+
+.approved-container{
+    width: 100%;
+    padding: 1rem;
+}
+
+.a-c-top{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+
+
+    /* background-color: #00ff08; */
+    position: relative;
+
+
+}
+
+ .btns{
+    display: flex;
+    gap: 1rem;
+ }
+.btns button{
+    padding: .6rem .7rem;
+    background-color: crimson;
+    color: #ffff;
+    border: none;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: transform ease 0.3s;
+    box-shadow:  0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btns button:active{
+    transform: scale(.85);
+}
+.search{
+    /* background-color: crimson; */
+    position: absolute;
+    right: 0%;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+.search-input{
+    height: 2rem;
+    border: 1px solid #00aaff;
+    border-radius: .2rem;
+}
+
+.a-c-table{
+    width: 100%;
+    margin-top: 30px;
+  font-family: Arial, sans-serif;
+  
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.status-approved {
+  background-color: #e6ffe6; /* Light green background */
+  color: #008000; /* Dark green text */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.action-button {
+  /* background-color: #007bff; */
+  /* color: white; */
+
+  padding: 5px 5px;
+  margin: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  opacity: 0.9;
+}
+
+.action-button.view {
+ 
+ color:#ff4154;
+ border: 1px solid #ff4154;
+  }
+.action-button.edit { 
+  /* background-color: #ffc107; */
+   color: #333;}
+.action-button.delete {
+ background-color: none; 
+ border: 1px solid black;
+ }
+
+
+.profile-image {
+ width: 30px; /* इमेज की चौड़ाई */
+ height: 30px; /* इमेज की ऊँचाई */
+ border-radius: 50%; /* गोल इमेज के लिए */
+ margin-right: 8px; /* नाम और इमेज के बीच गैप */
+ vertical-align: middle; /* टेक्स्ट के साथ अलाइन करने के लिए */
+ object-fit: cover; /* इमेज को कंटेनर में फिट करने के लिए */
+}
