@@ -1,32 +1,25 @@
+import { RouterProvider } from 'react-router-dom';
 
-import React from 'react';
-import Navbar from './Pages/Navbar.jsx';
-import { BrowserRouter,Route,Routes } from 'react-router';
-import Home from './Pages/Home.jsx';
-import About from './Pages/About.jsx';
-import Contact from './Pages/Contact.jsx';
+// routing
+import router from 'routes';
 
+// project imports
+import NavigationScroll from 'layout/NavigationScroll';
 
+import ThemeCustomization from 'themes';
 
+// auth provider
 
-function App() {
-  
-return (
-   <>
-  <BrowserRouter>
- 
- <Navbar/>
- <Routes>
-  <Route path='/' element={<Home/>}/>
-  <Route path='/about' element={<About/>}/>
-  <Route path='/contact' element={<Contact/>}/>
- </Routes>
-   </BrowserRouter>
-    </>
-    
-  
-    )
+// ==============================|| APP ||============================== //
 
+export default function App() {
+  return (
+    <ThemeCustomization>
+      <NavigationScroll>
+        <>
+          <RouterProvider router={router} />
+        </>
+      </NavigationScroll>
+    </ThemeCustomization>
+  );
 }
-
-export default App;
