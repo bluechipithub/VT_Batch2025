@@ -5,6 +5,7 @@ import { lazy } from 'react';
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
+
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 const AllJobs = Loadable(lazy(() => import('views/all-jobs')));
 const AppliedJobs = Loadable(lazy(() => import('views/applied-jobs')));
@@ -16,6 +17,7 @@ const GIG = Loadable(lazy(() => import('views/GIG')));
 const Status = Loadable(lazy(() => import('views/Status')));
 const IdCard = Loadable(lazy(() => import('views/Idcard'))); // Ensure this points to your ID card file
 const MyProfile = Loadable(lazy(() => import('views/MyProfile')));
+const Home = Loadable(lazy(() => import('views/Home')));
 
 const MainRoutes = {
   path: '/',
@@ -32,7 +34,8 @@ const MainRoutes = {
     { path: 'provider/gig', element: <GIG /> },
     { path: 'provider/status', element: <Status /> },
     { path: 'provider/id-card', element: <IdCard /> },
-    { path: 'provider/User-Profile', element: <MyProfile /> }
+    { path: 'provider/User-Profile', element: <MyProfile /> },
+     { path: '/home', element: <Home /> }
   ]
 };
 
