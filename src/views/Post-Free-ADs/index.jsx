@@ -255,19 +255,7 @@ const PostAdForm = () => {
           <a href="#">My profile</a> | <a href="#">Logout</a>
         </div>
       </header> */}
-      <div>
-        <h1>Post your Service Requirement here</h1>
-      </div>
-      <div className='header-title'>
-        <p>पोस्टिंग की आवश्यकता के लिए निर्देश !
-1.केवल अंग्रेजी में पोस्ट कर सकते हैं.
-2.यदि आप आवश्यकता का फोटो या वीडियो या दोनो डालते हैं तो आपको अच्छे परिणाम मिल सकते हैं।
-3.वीडियो या फोटो में कहीं भी अपना नाम, नंबर, पता या लिंक का उपयोग न करें।</p>
-<p>Important Notification !
-1.Can post in English only.
-2.If you put the video or photo or both of the requirement you can get good results.
-3.Do Not use your Name, Number, Address or any link anywhere in video or images.</p>
-      </div>
+      
 
       <div className="form-container">
         <form id="ad-form" onSubmit={handleSubmit} noValidate>
